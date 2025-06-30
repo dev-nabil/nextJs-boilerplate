@@ -1,9 +1,9 @@
 'use client'
 
 import { clientNavLinks } from '@/routes'
-import AppLogo from '../app-logo'
+import AppLogo from '../headers/app-logo'
 import AuthNav from '../auth-nav'
-import NavMenu from '../nav-menu'
+import NavMenu from '../headers/nav-menu'
 
 export default function ClientHeader() {
   return (

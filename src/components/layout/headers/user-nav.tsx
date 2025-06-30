@@ -40,9 +40,9 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState, useTransition } from "react";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import ProfileRatio from "../shared/ProfileRatio";
-import { Badge } from "../ui/badge";
-import NotificationDropdown from "./notification/NotificatonDropdown";
+import ProfileRatio from "../../shared/ProfileRatio";
+import { Badge } from "../../ui/badge";
+import NotificationDropdown from "./notification-dropdown";
 
 export default function UserNav() {
   const { user } = useAuth();

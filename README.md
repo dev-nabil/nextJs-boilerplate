@@ -70,6 +70,7 @@ src/
 ├── hooks/               # Custom React hooks
 ├── lib/                 # Utility functions
 ├── types/               # TypeScript type definitions
+├── schemas/            # Zod validation schemas (make separate files)
 └── constants/           # Application constants
 \`\`\`
 
@@ -110,11 +111,11 @@ The boilerplate includes a complete authentication system:
 
 ## Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run type-check` - Run TypeScript compiler
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm start` - Start production server
+- `pnpm lint` - Run ESLint
+- `pnpm type-check` - Run TypeScript compiler
 
 ## Environment Variables
 
@@ -122,6 +123,8 @@ The boilerplate includes a complete authentication system:
 JWT_SECRET=your-secret-key-change-this-in-production
 NODE_ENV=development
 \`\`\`
+
+### To get the environment values you can get all the variables from that /config/env.ts
 
 ## Deployment
 

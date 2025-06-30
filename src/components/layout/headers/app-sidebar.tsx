@@ -3,8 +3,8 @@
 import { Command, FolderKanban, Frame, GalleryVerticalEnd, LayoutDashboard, Mail, Map, PieChart, Settings, User } from 'lucide-react'
 import * as React from 'react'
 
-import { NavMain } from '@/components/nav-main'
-import { NavProjects } from '@/components/nav-projects'
+import { NavMain } from '@/components/layout/headers/nav-main'
+import { NavProjects } from '@/components/layout/headers/nav-projects'
 import { TeamSwitcher } from '@/components/team-switcher'
 import { Sidebar, SidebarContent, SidebarHeader, SidebarRail } from '@/components/ui/sidebar'
 
