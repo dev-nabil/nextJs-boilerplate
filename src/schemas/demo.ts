@@ -1,25 +1,34 @@
-import * as z from 'zod'
+import * as z from "zod";
 
 export const projectCreateSchema = z
   .object({
-    title: z.string().min(1, { message: 'Title is required' }),
+    title: z.string().min(1, { message: "Title is required" }),
     dateRange: z.object({
       from: z.date(),
-      to: z.date()
+      to: z.date(),
     }),
-    description: z
-      .string()
-      .max(MAX_DESCRIPTION_LENGTH, { message: `Description cannot exceed ${MAX_DESCRIPTION_LENGTH} characters` })
-      .optional(),
-    serviceType: z.enum(['photography', 'videography', 'editing', 'all', 'both'], {
-      message: 'Select a valid service type'
-    }),
-    amount: z.coerce.number().positive({ message: 'Amount must be a valid number' }),
+
+    serviceType: z.enum(
+      ["photography", "videography", "editing", "all", "both"],
+      {
+        message: "Select a valid service type",
+      }
+    ),
+    amount: z.coerce
+      .number()
+      .positive({ message: "Amount must be a valid number" }),
     boosted: z.boolean().optional(),
-    boostAmount: z.coerce.number().min(0, { message: 'Boost amount must be a valid number' }).default(0.0),
-    city: z.string().min(1, { message: 'City is required' }),
-    country: z.string().min(1, { message: 'Country is required' }),
-    status: z.enum(['draft', 'published', 'ongoing', 'completed'], { message: 'Select a valid status' }).default('draft')
+    boostAmount: z.coerce
+      .number()
+      .min(0, { message: "Boost amount must be a valid number" })
+      .default(0.0),
+    city: z.string().min(1, { message: "City is required" }),
+    country: z.string().min(1, { message: "Country is required" }),
+    status: z
+      .enum(["draft", "published", "ongoing", "completed"], {
+        message: "Select a valid status",
+      })
+      .default("draft"),
   })
-  .passthrough()
-export type TProjectCreate = z.infer<typeof projectCreateSchema>
+  .passthrough();
+export type TProjectCreate = z.infer<typeof projectCreateSchema>;

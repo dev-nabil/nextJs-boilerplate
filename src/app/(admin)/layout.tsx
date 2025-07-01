@@ -37,6 +37,7 @@ import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { useAuth } from "@/hooks/use-auth";
 import { useRouter } from "next/navigation";
 import type React from "react";
+import { Suspense } from "react";
 
 export default function AdminLayout({
   children,
@@ -53,19 +54,24 @@ export default function AdminLayout({
   // }, [isAuthenticated, user, router])
 
   return (
-    <SidebarProvider className="gap-5">
-      <div className="left-sidebar">
-        <AdminSidebar variant="inset" />
-      </div>
-      <SidebarInset
-        className="admin_shadow right-sidebar shadow-none"
-        style={{ width: "calc(100% - 279px)" }}
-      >
-        <SiteHeader user={user?.user} />
-        <div className="mt-6 h-full w-full rounded-md bg-[#F7F7F7]">
-          {children}
+    <Suspense fallback={<div>Loading...</div>}>
+      <SidebarProvider className="gap-5">
+        <div className="left-sidebar">
+          <AdminSidebar variant="inset" />
         </div>
-      </SidebarInset>
-    </SidebarProvider>
+        <SidebarInset
+          className="admin_shadow right-sidebar shadow-none"
+          style={{ width: "calc(100% - 279px)" }}
+        >
+          <SiteHeader
+            //@ts-ignore
+            user={user?.user}
+          />
+          <div className="mt-6 h-full w-full rounded-md bg-[#F7F7F7]">
+            {children}
+          </div>
+        </SidebarInset>
+      </SidebarProvider>
+    </Suspense>
   );
 }

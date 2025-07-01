@@ -155,9 +155,9 @@ export default async function HomePage() {
   ];
 
   return (
-    <AnimatedLayout className="min-h-screen">
+    <AnimatedLayout className="min-h-screen ">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16 text-center">
+      <section className="container mx-auto px-4 py-16 text-center ">
         <StaggerContainer>
           <StaggerItem>
             <Badge variant="secondary" className="mb-4">
