@@ -1,8 +1,5 @@
-import React from 'react'
-import { Separator } from '@/components/ui/separator'
-import { SidebarTrigger } from '@/components/ui/sidebar'
-import { NavUser } from './nav-user'
-import AppBreadcrumbs from './custom/app-breadcrumbs'
+import { SidebarTrigger } from "@/components/ui/sidebar";
+import { NavUser } from "./nav-user";
 
 export default function AppHeader() {
   return (
@@ -10,8 +7,6 @@ export default function AppHeader() {
       <div className="flex w-full items-center justify-between gap-2 px-4">
         <div className="flex items-center gap-2">
           <SidebarTrigger className="-ml-1" />
-          <Separator orientation="vertical" className="mr-2 data-[orientation=vertical]:h-4" />
-          <AppBreadcrumbs />
         </div>
 
         <div className="w-fit flex-none items-center justify-end gap-2 px-4">
@@ -19,5 +14,5 @@ export default function AppHeader() {
         </div>
       </div>
     </header>
-  )
+  );
 }

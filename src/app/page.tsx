@@ -53,7 +53,7 @@ async function getHomeData() {
     console.error("Failed to fetch home data:", error);
     return {
       stats: {
-        components: 50,
+        components: 60,
         examples: 25,
         features: 15,
       },
@@ -173,7 +173,7 @@ export default async function HomePage() {
           </StaggerItem>
 
           <StaggerItem>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-muted-foreground dark:text-green-600  max-w-3xl mx-auto mb-8">
               A production-ready boilerplate with comprehensive demo examples,
               built for developers who want to learn modern web development with
               Next.js, TypeScript, and the latest tools.

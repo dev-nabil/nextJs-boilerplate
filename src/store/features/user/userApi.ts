@@ -65,7 +65,7 @@ export const userApi = api.injectEndpoints({
     }),
     getOwnProfile: builder.query({
       query: () => "/user/me",
-      providesTags: ["User", "seller", "buyer"],
+      providesTags: ["User"],
       async onQueryStarted(arg, { dispatch, queryFulfilled }) {
         try {
           const { data } = await queryFulfilled;
@@ -137,7 +137,7 @@ export const userApi = api.injectEndpoints({
           body: data,
         };
       },
-      invalidatesTags: ["User", "pending-verification"],
+      invalidatesTags: ["User"],
     }),
     updateAddress: builder.mutation({
       query: ({ id, data }) => {
@@ -147,7 +147,7 @@ export const userApi = api.injectEndpoints({
           body: data,
         };
       },
-      invalidatesTags: ["User", "seller"],
+      invalidatesTags: ["User"],
     }),
     deleteUser: builder.mutation({
       query: (id) => {
